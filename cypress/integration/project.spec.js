@@ -44,7 +44,7 @@ describe('Shopping Cart Project', () => {
     cy.clearLocalStorage();
   });
 
-  describe('1 - Listagem de produtos', () => {
+  describe('1 - Crie uma listagem de produtos', () => {
     it('Listagem de produtos', () => {
       cy.get(ITEM_SELECTOR)
         .should('exist')
@@ -148,7 +148,7 @@ describe('Shopping Cart Project', () => {
     });
   });
 
-  describe('6 - Botão para limpar carrinho de compras', () => {
+  describe('6 - Crie um botão para limpar carrinho de compras', () => {
     it('Botão para limpar carrinho de compras', () => {
       addToCart(3);
       addToCart(0);
@@ -160,7 +160,7 @@ describe('Shopping Cart Project', () => {
     });
   });
 
-  describe('7 - Adicionar um texto de "loading" durante uma requisição à API', () => {
+  describe('7 - Adicione um texto de `loading` durante uma requisição à API', () => {
     it('Adicionar um texto de "loading" durante uma requisição à API', () => {
 
       cy.visit(PROJECT_URL)

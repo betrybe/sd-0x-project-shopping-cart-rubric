@@ -1,7 +1,7 @@
 {
   "requirements": [
     {
-      "description":"1 - Listagem de produtos",
+      "description":"1 - Crie uma listagem de produtos",
       "bonus": false
     },
     {
@@ -21,11 +21,11 @@
       "bonus": false
     },
     {
-      "description":"6 - Botão para limpar carrinho de compras" ,
+      "description":"6 - Crie um botão para limpar carrinho de compras" ,
       "bonus": false
     },
     {
-      "description":"7 - Adicionar um texto de 'loading' durante uma requisição à API" ,
+      "description":"7 - Adicione um texto de `loading` durante uma requisição à API" ,
       "bonus": false
     }
   ]
