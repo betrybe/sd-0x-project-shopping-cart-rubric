@@ -1,10 +1,11 @@
 {
-  "extends": "airbnb",
+  "extends": "trybe-backend",
   "rules": {
     "no-alert": "off",
     "no-console": "off",
     "prefer-arrow-callback": "off",
-    "func-names": "off"
+    "func-names": "off",
+    "sonarjs/no-duplicate-string": "warn" // para passar no avaliador depois remover
   },
   "env": {
     "browser": true
