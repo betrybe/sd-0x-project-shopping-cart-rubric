@@ -1,11 +1,10 @@
 {
-  "extends": "trybe-backend",
+  "extends": "trybe-fundamentals",
   "rules": {
     "no-alert": "off",
     "no-console": "off",
     "prefer-arrow-callback": "off",
-    "func-names": "off",
-    "sonarjs/no-duplicate-string": "warn" // para passar no avaliador depois remover
+    "func-names": "off"
   },
   "env": {
     "browser": true
