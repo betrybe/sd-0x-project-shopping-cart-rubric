@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb",
+  "extends": "trybe-fundamentals",
   "rules": {
     "no-alert": "off",
     "no-console": "off",
