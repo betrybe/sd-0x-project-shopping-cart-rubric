@@ -1,6 +1,8 @@
 const URL_SITES = 'https://api.mercadolibre.com/sites/MLB';
 const URL_ITEMS = 'https://api.mercadolibre.com/items';
 let cartItems;
+let totalPrice = 0;
+let totalPriceElement;
 const cartItemsLocalStorage = [];
 const localStorageKey = 'cartItems';
 
@@ -13,6 +15,11 @@ function saveToLocalStorage({ sku, name, salePrice }) {
 function removeFromLocalStorage(sku) {
   const newListItems = cartItemsLocalStorage.filter((item) => item.sku !== sku);
   localStorage.setItem(localStorageKey, JSON.stringify(newListItems));
+}
+
+function sumTotalPrice(price) {
+  totalPrice += price;
+  totalPriceElement.innerHTML = `${totalPrice}`;
 }
 
 function createProductImageElement(imageSource) {
@@ -49,8 +56,12 @@ function cartItemClickListener(event) {
   // coloque seu código aqui
   const innerTextSplited = event.target.innerText.split(' ');
   const sku = innerTextSplited[1];
+  const priceString = innerTextSplited[innerTextSplited.length - 1];
+  const price = priceString.replace('$', '');
+
   cartItems.removeChild(event.target);
   removeFromLocalStorage(sku);
+  sumTotalPrice(-Number(price));
 }
 
 function createCartItemElement({ sku, name, salePrice }) {
@@ -78,6 +89,7 @@ function addProdutsToScreen(products) {
 function appendProductItemToCart(item) {
   const el = createCartItemElement(item);
   cartItems.appendChild(el);
+  sumTotalPrice(Number(item.salePrice));
 }
 
 async function getProductItem(id) {
@@ -105,8 +117,20 @@ function loadCartItemsFromLocalStorage() {
   }
 }
 
+function createTotalPriceElement() {
+  const cart = document.querySelector('.cart');
+  const section = document.createElement('section');
+  section.innerHTML = 'Preço total: $';
+  totalPriceElement = document.createElement('span');
+  totalPriceElement.className = 'total-price';
+  totalPriceElement.innerHTML = '0.00';
+  section.appendChild(totalPriceElement);
+  cart.appendChild(section);
+}
+
 window.onload = async function onload() {
   cartItems = document.querySelector('.cart__items');
+  createTotalPriceElement();
 
   try {
     const products = await getProducts();
