@@ -26,8 +26,6 @@ function removeFromLocalStorage(sku) {
 
 function sumTotalPrice(price) {
   totalPrice += price;
-  // const total = parseFloat(totalPrice).toFixed(2);
-  // console.log(total);
   totalPriceElement.innerHTML = `${totalPrice}`;
 }
 
@@ -159,9 +157,13 @@ window.onload = async function onload() {
   cartItems = document.querySelector('.cart__items');
   btnEmptyCart = document.querySelector('.empty-cart');
 
-  createTotalPriceElement();
-  await getProducts();
-  addEventListenerToButtons();
-  loadCartItemsFromLocalStorage();
-  addEventListenerToEmptyCart();
+  try {
+    createTotalPriceElement();
+    await getProducts();
+    addEventListenerToButtons();
+    loadCartItemsFromLocalStorage();
+    addEventListenerToEmptyCart();
+  } catch (e) {
+    console.log(e);
+  }
 };
