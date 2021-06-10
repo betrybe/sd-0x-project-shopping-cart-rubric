@@ -1,4 +1,6 @@
 const URL_SITES = 'https://api.mercadolibre.com/sites/MLB';
+const URL_ITEMS = 'https://api.mercadolibre.com/items';
+let cartItems;
 
 function createProductImageElement(imageSource) {
   const img = document.createElement('img');
@@ -26,21 +28,21 @@ function createProductItemElement({ sku, name, image }) {
   return section;
 }
 
-// function getSkuFromProductItem(item) {
-//   return item.querySelector('span.item__sku').innerText;
-// }
+function getSkuFromProductItem(item) {
+  return item.querySelector('span.item__sku').innerText;
+}
 
-// function cartItemClickListener(event) {
-//   // coloque seu código aqui
-// }
+function cartItemClickListener() {
+  // coloque seu código aqui
+}
 
-// function createCartItemElement({ sku, name, salePrice }) {
-//   const li = document.createElement('li');
-//   li.className = 'cart__item';
-//   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
-//   li.addEventListener('click', cartItemClickListener);
-//   return li;
-// }
+function createCartItemElement({ sku, name, salePrice }) {
+  const li = document.createElement('li');
+  li.className = 'cart__item';
+  li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
+  li.addEventListener('click', cartItemClickListener);
+  return li;
+}
 
 async function getProducts() {
   const response = await fetch(`${URL_SITES}/search?q=computador`);
@@ -56,10 +58,34 @@ function addProdutsToScreen(products) {
   });
 }
 
+function appendProductItemToCart(item) {
+  const el = createCartItemElement(item);
+  cartItems.appendChild(el);
+}
+
+async function getProductItem(id) {
+  const response = await fetch(`${URL_ITEMS}/${id}`);
+  const product = await response.json();
+  return product;
+}
+
+function addEventListenerToButtons() {
+  const buttons = document.querySelectorAll('.item__add');
+  buttons.forEach((button) => button.addEventListener('click', async (event) => {
+    const id = getSkuFromProductItem(event.target.parentElement);
+    const product = await getProductItem(id);
+    const { id: sku, title: name, price: salePrice } = product;
+    appendProductItemToCart({ sku, name, salePrice });
+  }));
+}
+
 window.onload = async function onload() {
+  cartItems = document.querySelector('.cart__items');
+
   try {
     const products = await getProducts();
     addProdutsToScreen(products);
+    addEventListenerToButtons();
   } catch (e) {
     console.log(e);
   }
