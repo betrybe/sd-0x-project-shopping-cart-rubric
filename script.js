@@ -128,6 +128,16 @@ function createTotalPriceElement() {
   cart.appendChild(section);
 }
 
+function addEventListenerToEmptyCart() {
+  const btnEmptyCart = document.querySelector('.empty-cart');
+  btnEmptyCart.addEventListener('click', () => {
+    cartItems.innerHTML = '';
+    cartItemsLocalStorage.length = 0;
+    localStorage.setItem(localStorageKey, JSON.stringify(cartItemsLocalStorage));
+    sumTotalPrice(-Number(totalPrice));
+  });
+}
+
 window.onload = async function onload() {
   cartItems = document.querySelector('.cart__items');
   createTotalPriceElement();
@@ -137,6 +147,7 @@ window.onload = async function onload() {
     addProdutsToScreen(products);
     addEventListenerToButtons();
     loadCartItemsFromLocalStorage();
+    addEventListenerToEmptyCart();
   } catch (e) {
     console.log(e);
   }
