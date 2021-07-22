@@ -1,33 +1,99 @@
 {
-    "requirements": [
-      {
-        "description":"Listagem de produtos",
-        "bonus": false
-      },
-      {
-        "description":"Adicione o produto ao carrinho de compras",
-        "bonus": false
-      },
-      {
-        "description":"Remova o item do carrinho de compras ao clicar nele",
-        "bonus": false
-      },
-      {
-        "description":"Carregue o carrinho de compras através do **LocalStorage** ao iniciar a página",
-        "bonus": false
-      },
-      {
-        "description":"Some o valor total dos itens do carrinho de compras de forma assíncrona" ,
-        "bonus": false
-      },
-      {
-        "description":"Botão para limpar carrinho de compras" ,
-        "bonus": false
-      },
-      {
-        "description":"Adicionar um texto de \"loading\" durante uma requisição à API" ,
-        "bonus": false
-      }
-    ]
-  }
-  
+  "requirements": [
+    {
+      "description": "Listagem de produtos",
+      "bonus": false,
+      "skill_ids": [
+        "3ee633a1-0597-40ef-b19e-e820542f8c6d",
+        "0c66d986-c505-4d4b-9f2a-4c279f813718",
+        "66a47b8d-a8c7-4942-b9b2-35ffca10aa51",
+        "367b7526-b9f5-4dff-b5e5-9ebd7b8201f1",
+        "7f7d9fe0-306f-440b-a506-8739b32956cd",
+        "91c2d276-20b0-43cb-85d3-cf5f5825116b",
+        "c000392b-2122-4d53-960a-987a52d58c09",
+        "1362a18e-fa86-4a9b-852d-7b2349ef435b",
+        "eb028327-0299-419b-836e-e20246a5173a",
+        "d572d27f-d129-4b24-8273-d60ac9f5052f",
+        "872569e5-8e87-4af7-854b-453dea7a2919",
+        "f473cba7-f69e-49e4-b7e6-592366193114",
+        "48f3095f-7d23-4a4b-be32-10c8bdc73a61",
+        "923d5ab8-3a72-4cad-aa8f-1777e2f852c4"
+      ]
+    },
+    {
+      "description": "Adicione o produto ao carrinho de compras",
+      "bonus": false,
+      "skill_ids": [
+        "3ee633a1-0597-40ef-b19e-e820542f8c6d",
+        "0c66d986-c505-4d4b-9f2a-4c279f813718",
+        "66a47b8d-a8c7-4942-b9b2-35ffca10aa51",
+        "367b7526-b9f5-4dff-b5e5-9ebd7b8201f1",
+        "7f7d9fe0-306f-440b-a506-8739b32956cd",
+        "91c2d276-20b0-43cb-85d3-cf5f5825116b",
+        "c000392b-2122-4d53-960a-987a52d58c09",
+        "1362a18e-fa86-4a9b-852d-7b2349ef435b",
+        "eb028327-0299-419b-836e-e20246a5173a",
+        "49bdfaa2-3e7e-45b9-ab14-68ee0d38eef4",
+        "e92ee2db-40ae-43cb-a153-34b9c15b8973",
+        "51c0681f-2e6e-47bc-af72-e0ae33fc79da",
+        "e299623c-89cb-452b-aba4-25802c948ab7",
+        "8bd824d3-3355-4fca-a4cd-d9619100fe58",
+        "d572d27f-d129-4b24-8273-d60ac9f5052f",
+        "872569e5-8e87-4af7-854b-453dea7a2919",
+        "e3be7cfe-6470-4576-a819-7519b70223cd",
+        "c608dac0-a566-4d23-97e8-91a60c4c236c",
+        "7ba129e8-c097-49fc-9a67-730b51608fbe"
+      ]
+    },
+    {
+      "description": "Remova o item do carrinho de compras ao clicar nele",
+      "bonus": false,
+      "skill_ids": [
+        "49bdfaa2-3e7e-45b9-ab14-68ee0d38eef4",
+        "e92ee2db-40ae-43cb-a153-34b9c15b8973",
+        "51c0681f-2e6e-47bc-af72-e0ae33fc79da",
+        "e299623c-89cb-452b-aba4-25802c948ab7",
+        "8bd824d3-3355-4fca-a4cd-d9619100fe58"
+      ]
+    },
+    {
+      "description": "Carregue o carrinho de compras através do **LocalStorage** ao iniciar a página",
+      "bonus": false,
+      "skill_ids": [
+        "00a6d857-808f-46e5-b4a7-2572cdf4a3fc",
+        "f4837564-821a-4c15-8d70-f11db366873c",
+        "e3be7cfe-6470-4576-a819-7519b70223cd",
+        "c608dac0-a566-4d23-97e8-91a60c4c236c",
+        "7ba129e8-c097-49fc-9a67-730b51608fbe"
+      ]
+    },
+    {
+      "description": "Some o valor total dos itens do carrinho de compras de forma assíncrona",
+      "bonus": false,
+      "skill_ids": [
+        "e3be7cfe-6470-4576-a819-7519b70223cd",
+        "c608dac0-a566-4d23-97e8-91a60c4c236c",
+        "7ba129e8-c097-49fc-9a67-730b51608fbe"
+      ]
+    },
+    {
+      "description": "Botão para limpar carrinho de compras",
+      "bonus": false,
+      "skill_ids": [
+        "49bdfaa2-3e7e-45b9-ab14-68ee0d38eef4",
+        "e92ee2db-40ae-43cb-a153-34b9c15b8973",
+        "51c0681f-2e6e-47bc-af72-e0ae33fc79da"
+      ]
+    },
+    {
+      "description": "Adicionar um texto de \"loading\" durante uma requisição à API",
+      "bonus": false,
+      "skill_ids": [
+        "91c2d276-20b0-43cb-85d3-cf5f5825116b",
+        "c000392b-2122-4d53-960a-987a52d58c09",
+        "d572d27f-d129-4b24-8273-d60ac9f5052f",
+        "872569e5-8e87-4af7-854b-453dea7a2919"
+      ]
+    }
+  ]
+}
